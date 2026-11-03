@@ -255,6 +255,9 @@ button[data-variant="segmented_control"][aria-checked="true"] p { color:#fff !im
 
 # ---------- Clave de acceso (opcional) ----------
 CLAVE = secret("clave")
+# La clave también puede venir en el enlace (…?persona=Mamá&clave=xxxx) para no tener que escribirla
+if CLAVE and str(st.query_params.get("clave", "")) == str(CLAVE):
+    st.session_state.autorizado = True
 if CLAVE and not st.session_state.get("autorizado"):
     md('<div class="hero"><div style="font-size:3rem">❤️</div><div class="nombre">Mi Presión</div>'
        '<div class="sub">Escribe la clave de la familia para entrar</div></div>')
