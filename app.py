@@ -656,7 +656,7 @@ with tab_graf:
             with st.container(key="graf"):
                 md('<div class="leyenda"><span style="background:#F7C6D9;color:#8A1C3C">● Alta</span>'
                    '<span style="background:#BCD6F4;color:#1D4F8A">● Baja</span></div>')
-                st.altair_chart(graf, width="stretch")
+                st.altair_chart(graf, use_container_width=True)
             md('<div class="sub" style="text-align:center">Las franjas de color marcan la zona normal: '
                '<b style="color:#36561A">verde</b> para la alta (90–120) y <b style="color:#1D4F8A">azul</b> '
                'para la baja (60–80).</div>')
